@@ -1,0 +1,16 @@
+# Notebooks Gallery
+````{panels}
+:container: full-width
+:column: text-left col-6 col-lg-4
+:card: +my-2
+:img-top-cls: w-75 m-auto p-2
+:body: d-none
+
+---
+:img-top: ./notebooks_gallery/_thumbnails/Xarray\ Getting\ Started.png
++++
+**Xarray Getting Started**
+
+{link-badge}`./notebooks/Xarray Getting Started.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
+
+````
