@@ -1,5 +1,5 @@
 myst-nb
-myst-parser=0.12
+myst-parser==0.12
 sphinx-book-theme
 sphinx-panels
 matplotlib
