@@ -14,6 +14,13 @@
 {link-badge}`./notebooks/Scrape_pangaea.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
 
 ---
+:img-top: ./notebooks_gallery/_thumbnails/Variable\ Explorer.png
++++
+**Variable Explorer**
+
+{link-badge}`./notebooks/Variable Explorer.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
+
+---
 :img-top: ./notebooks_gallery/_thumbnails/Xarray\ Getting\ Started.png
 +++
 **Xarray Getting Started**
