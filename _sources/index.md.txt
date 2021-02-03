@@ -27,4 +27,11 @@
 
 {link-badge}`./notebooks/Xarray Getting Started.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
 
+---
+:img-top: ./notebooks_gallery/_thumbnails/ipygany_3d_example.png
++++
+**ipygany**
+
+{link-badge}`./notebooks/ipygany_3d_example.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
+
 ````
