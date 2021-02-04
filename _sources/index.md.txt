@@ -14,6 +14,13 @@
 {link-badge}`./notebooks/Scrape_pangaea.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
 
 ---
+:img-top: ./notebooks_gallery/_thumbnails/TopoBathy-3D-color+warp-slider.png
++++
+**TopoBathy-3D-color+warp-slider**
+
+{link-badge}`./notebooks/TopoBathy-3D-color+warp-slider.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
+
+---
 :img-top: ./notebooks_gallery/_thumbnails/Variable\ Explorer.png
 +++
 **Variable Explorer**
