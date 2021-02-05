@@ -51,7 +51,7 @@ html_theme_options = {
     # 'home_page_in_toc': True,
     'path_to_docs': './',
     'search_bar_text': 'Search this site...',
-    'repository_url': 'http://demo_repo.com',
+    'repository_url': 'https://github.com/CEREGE-CL/Notebooks-Gallery',
     # "repository_branch": "gh-pages",  # For testing
     'launch_buttons': {
         'binderhub_url': 'https://mybinder.org',
