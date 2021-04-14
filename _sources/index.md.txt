@@ -7,6 +7,13 @@
 :body: d-none
 
 ---
+:img-top: ./notebooks_gallery/_thumbnails/Retreive_coordinates.png
++++
+**Coordinate extractor**
+
+{link-badge}`./notebooks/Retreive_coordinates.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
+
+---
 :img-top: ./notebooks_gallery/_thumbnails/Scrape_pangaea.png
 +++
 **Introduction**

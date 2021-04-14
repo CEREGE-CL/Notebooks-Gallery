@@ -1,0 +1,154 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Coordinate extractor\n",
+    "\n",
+    "<div class='alert alert-warning'>\n",
+    "    This only seems to be working in Jupyter notebook classic.\n",
+    "    If in Jupyter lab:\n",
+    "    <ol>\n",
+    "        <li>Help</li>\n",
+    "        <li>Launch classic Notebook</li>\n",
+    "    </ol>\n",
+    "</div>\n",
+    "\n",
+    "A quick notebook to extract coordinates from a file from drawing on the canvas.\n",
+    "\n",
+    "This notebook has been tested on simple lat lon files, either convert your curvilinear coordinates to flat coordinates or modify the script"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import xarray as xr\n",
+    "import holoviews as hv\n",
+    "from holoviews.selection import link_selections\n",
+    "\n",
+    "import panel as pn\n",
+    "import param\n",
+    "hv.extension('bokeh')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Set varaible names\n",
+    "\n",
+    "This should be the only things that HAVE to be changed for the script to work"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "filename = 'FILENAME_HERE'\n",
+    "x_coord = 'lon'\n",
+    "y_coord = 'lat'\n",
+    "var = 'variable_name'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Load the data"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [],
+   "source": [
+    "ds = xr.open_dataset(filename)\n",
+    "ds"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Create and load the tool"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# We create 2 data sets for ease the pandas one is used to display and filter coords the xarray one is used to \n",
+    "# generate the image, if we dont use a hv.Dataset the selection doesn't seem to work???\n",
+    "dataset_pandas = hv.Dataset(ds[var].to_dataframe().reset_index())\n",
+    "dataset = hv.Dataset(ds[var])\n",
+    "\n",
+    "# Cretae the map\n",
+    "image = hv.Image(dataset, [x_coord, y_coord], var).opts(cmap='RdBu', width=700, aspect=2)\n",
+    "\n",
+    "# Create the selection object this is what is used to capture the selection info\n",
+    "link = link_selections.instance()\n",
+    "plots = link(image)\n",
+    "\n",
+    "# Update the table when the selection expression changes\n",
+    "@param.depends(link.param.selection_expr)\n",
+    "def selection_table(_):\n",
+    "    return hv.Table(dataset_pandas.select(link.selection_expr)).opts(width=900, height=200)\n",
+    "\n",
+    "# Show it all together\n",
+    "app = pn.Column(plots, selection_table, height=600)\n",
+    "app"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Access the selected values outside of the tool\n",
+    "\n",
+    "this is a pandas.DataFrame so you can call things like `df.loc[x_coord, y_coord]` to retrieve the coordinates these can then be passed back to xarray `.sel` to select along these coordinates"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = dataset_pandas.select(link.selection_expr).data\n",
+    "df"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python (pangeo)",
+   "language": "python",
+   "name": "python-pangeo"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
