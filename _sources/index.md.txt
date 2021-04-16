@@ -7,18 +7,18 @@
 :body: d-none
 
 ---
+:img-top: ./notebooks_gallery/_thumbnails/Ocean_coastal_mask.png
++++
+**Coastal Masks Using Convolutions**
+
+{link-badge}`./notebooks/Ocean_coastal_mask.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
+
+---
 :img-top: ./notebooks_gallery/_thumbnails/Retreive_coordinates.png
 +++
 **Coordinate extractor**
 
 {link-badge}`./notebooks/Retreive_coordinates.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
-
----
-:img-top: ./notebooks_gallery/_thumbnails/Ocean_coastal_mask.png
-+++
-**Import the data**
-
-{link-badge}`./notebooks/Ocean_coastal_mask.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
 
 ---
 :img-top: ./notebooks_gallery/_thumbnails/Scrape_pangaea.png
