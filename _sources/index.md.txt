@@ -35,6 +35,13 @@
 {link-badge}`./notebooks/Command_line.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
 
 ---
+:img-top: ./notebooks_gallery/_thumbnails/NCAR-GFDL_2_CMA5.png
++++
+**NCAR / GFDL Transformation**
+
+{link-badge}`./notebooks/NCAR-GFDL_2_CMA5.html,"rendered-notebook",cls=badge-secondary text-white float-left p-2 mr-1`
+
+---
 :img-top: ./notebooks_gallery/_thumbnails/TopoBathy-3D-color+warp-slider.png
 +++
 **TopoBathy-3D-color+warp-slider**
