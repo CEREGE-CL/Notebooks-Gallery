@@ -734,7 +734,7 @@ Tue Dec 10 16:54:52 2019: ncrcat -C --buffer_size 838860800 -p /ccc/scratch/cont
 <p>Small function to find the closest ij coordinates in the curvilinear longitudes and latitudes and returns the ij coordinates.</p>
 <div class='alert alert-info'>
     It would be good to be able to do this with multiple longitude and latitude values but the np.substract doesn't seem to be working correctly.
-<div><div class="cell docutils container">
+</div><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_nearest</span><span class="p">(</span><span class="n">lons</span><span class="p">,</span> <span class="n">lats</span><span class="p">,</span> <span class="n">lon0</span><span class="p">,</span><span class="n">lat0</span><span class="p">):</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="p">((</span><span class="n">lons</span> <span class="o">-</span> <span class="n">lon0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lats</span> <span class="o">-</span> <span class="n">lat0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">argmin</span><span class="p">()</span>

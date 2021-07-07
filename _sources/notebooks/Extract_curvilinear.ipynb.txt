@@ -613,7 +613,7 @@
     "\n",
     "<div class='alert alert-info'>\n",
     "    It would be good to be able to do this with multiple longitude and latitude values but the np.substract doesn't seem to be working correctly.\n",
-    "<div>"
+    "</div>"
    ]
   },
   {
